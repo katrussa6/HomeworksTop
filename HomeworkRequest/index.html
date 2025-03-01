@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="cities">
+        <select id="citySelect">
+
+        </select>
+        <span id="currentCity">Москва</span>
+    </div>
+    <button id = "openModalButton"> Открыть модальное окно </button>
+    <div id = "modal" class="modal">
+        <div class="modal-content">
+            <button id = "closeModalButton" class = "modal-clos">X</button>
+            <h1>Авторизация</h1>
+            <form id="loginForm'action=">
+                <label id="labelName" for="login">Имя</label>
+                <input type="text" name="login" required>
+                <label for="">Пароль</label>
+                <div style = "display:flex">
+                    <input type="password" name="password"  required>
+                    <input id="sharePassword" type="button" value="Показать пароль">
+                    
+                </div>
+                <span id="password-error" style="color: red;"></span>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+ <div class="nvnx">
+
+    <a href="./newspage.html" target="_blank"><button class="titleBatton"> News</button></a>
+
+</div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
