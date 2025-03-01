@@ -1,0 +1,10 @@
+https://jsonplaceholder.typicode.com/comments
+https://jsonplaceholder.typicode.com/albums
+https://via.placeholder.com/600/92c952
+https://jsonplaceholder.typicode.com/todos
+https://jsonplaceholder.typicode.com/users
+
+1вывести данные с этих ресурсов в консоль(обязательно)
+2вывести данные с этих ресусров в html(не обязательно)
+3 Стилизовать html(если сделали 2)
+4 Выводить всего по 10 (если сделали 3)
