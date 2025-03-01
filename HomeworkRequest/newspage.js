@@ -26,8 +26,8 @@ function displayPosts(posts) {
   slicePost.forEach((element) => {
     const postElement = document.createElement("div");
 
-    postElement.style.marginBottom = "20px";
-
+    postElement.setAttribute('style','border: 1px solid blue;')
+    postsContainer.setAttribute('style','color:green')
     postsContainer.innerHTML += `
 <p>${element.userId}</p>
 <p>${element.title}</p>
@@ -55,7 +55,7 @@ function displayComments(comment) {
 
   sliceComment.forEach((comment) => {
     const commentElement = document.createElement("div");
-    commentElement.style.marginBottom = "20px";
+    commentElement.setAttribute('style','border: 1px solid blue;','	backgroundColor:red')
 
     commentsContainer.innerHTML += `
           <p>${comment.name}</p>
