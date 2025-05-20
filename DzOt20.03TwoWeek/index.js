@@ -1,49 +1,48 @@
-const arrNums = [
-  2, 2, 33, 48, 168, 3, 87, 22, 9, 9, 12, 2, 53, 87, 30, 6, 7, 28, 3, 9,
-];
+const car = {
+  model: "Rio",
+  manufacturer: "Kia",
+  age: "2018",
+  speed: "60",
+};
 
-function sumOfSquareRoots(arr) {
-  return arr.map(Math.sqrt).reduce((acc, curr) => acc + curr, 0);
+function showCars() {
+  const carElement = document.createElement("div");
+  carElement.className = "car";
+
+  //   const model = document.createElement("span");
+  //   model.textContent = car.model;
+
+  for (const property in car) {
+    console.log(`${property}: ${car[property]}`);
+    const item = document.createElement("div");
+    item.textContent = `${property}: ${car[property]}`;
+    carElement.appendChild(item);
+  }
+  document.body.append(carElement);
+}
+showCars();
+
+function calculateTravelTime(distance, speed) {
+  const timeWithoutBreaks = distance / speed;
+  const breaksCount = Math.floor(timeWithoutBreaks / 4);
+  const totalTime = timeWithoutBreaks + breaksCount;
+  return totalTime;
 }
 
-const resultOne = sumOfSquareRoots(arrNums);
-console.log("Сумма квадратных корней:", resultOne);
+function showTravelTime() {
+  const decimalHours = calculateTravelTime(50, car.speed);
+  const totalMinutes = decimalHours * 60;
 
-//первый способ массив без дублей
-const uniqueArray = [...new Set(arrNums)];
-console.log(uniqueArray);
+  // Получаем целые минуты
+  const hours = Math.floor(totalMinutes / 60);
+  const minutes = Math.floor(totalMinutes % 60);
 
-//второй способ массив без дублей
-//const uniqueArr = arrNums.reduce((accumulator, current) => {
-//  if (!accumulator.includes(current)) {
-//      accumulator.push(current);
-//  }
-//  return accumulator;
-//}, []);
-//console.log(uniqueArray);
+  // Остаток секунд
+  const seconds = Math.round((totalMinutes - hours * 60 - minutes) * 60);
 
-//третий способ массив без дублей
-//const uniqueArra = []; 
-//for (let i = 0; i < arrNums.length; i++) {
-//    if (!uniqueArray.includes(arrNums[i])) {
-//        uniqueArray.push(arrNums[i]);
-//    }
-//}
-//console.log(uniqueArray);
-
-//четвертый способ массив без дублей
-//const uniqueAr = array.filter((value, index) => array.indexOf(value) === index);
-//console.log(uniqueArray);
-
-
-const uniqueArrTree = [];
-
-for (let i = 0; i < arrNums.length; i++) {
-    // Проверяем, является ли текущий элемент равным следующему
-    if (arrNums[i] !== arrNums[i + 1]) {
-        uniqueArrTree.push(arrNums[i]); 
-        // Если не равны, добавляем в новый массив
-    }
+  console.log(`Время: ${hours} часов, ${minutes} минут, ${seconds} секунд`);
+  const totalTime = document.createElement("div");
+  totalTime.textContent = `Общее время: ${hours} часов, ${minutes} минут, ${seconds} секунд`;
+  document.body.append(totalTime);
 }
-
-console.log(uniqueArrTree);
+showTravelTime();
